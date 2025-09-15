@@ -1,9 +1,11 @@
-import { Controller, Get , Post } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 
-@Controller('task')
+@Controller('tasks')
 export class TasksController {
     @Get()
-    listTask(){}
+    listTask(){
+        return 'this all task home'
+    }
 
     @Post()
     createTask(){}
