@@ -1,0 +1,8 @@
+//untuk menjalankan nest
+npm run start::dev
+
+//membuat module
+nest generate module ...
+
+//membuat controller
+nest generate controller ...
