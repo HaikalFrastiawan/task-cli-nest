@@ -1,5 +1,6 @@
 //untuk menjalankan nest
 npm run start::dev
+npx ts-node-dev src/main.ts
 
 //membuat module
 nest generate module ...
