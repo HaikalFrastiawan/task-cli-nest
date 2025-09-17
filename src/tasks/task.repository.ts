@@ -18,7 +18,7 @@ export class TaskRepository {
 
         const newTask = {
             id: tasks[task.length - 1].id + 1,
-            content: task
+            content: task,
         };
 
         tasks.push(newTask);
