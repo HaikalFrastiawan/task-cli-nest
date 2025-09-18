@@ -1,30 +1,28 @@
 import { Controller, Get, Post, Body,Param, NotFoundException } from '@nestjs/common';
 import { CreateTaskDto } from './dtos/createTask.dto';
 import { TasksService } from './tasks.service';
-import { error } from 'console';
 
 @Controller('tasks')
 export class TasksController {
 
     taskService: TasksService;
 
-    constructor(){
-        this.taskService = new TasksService()
+    constructor(public tasksService: TasksService){
     }
 
     @Get()
     listTask(){
-        return this.taskService.findAll();
+        return this.tasksService.findAll();
     }
 
     @Post()
     createTask(@Body() body: CreateTaskDto) {
-        return this.taskService.create(body.content);
+        return this.tasksService.create(body.content);
     }
 
     @Get('/:id')
     async getTask(@Param('id') id: string) {
-        const task = await this.taskService.findOne(parseInt(id));
+        const task = await this.tasksService.findOne(parseInt(id));
 
         if (!task){
             throw new NotFoundException('Task Not Found')

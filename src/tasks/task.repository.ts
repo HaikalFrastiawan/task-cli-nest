@@ -1,5 +1,10 @@
+
+import { Injectable } from "@nestjs/common";
 import { readFile, writeFile } from "fs/promises";
 
+
+
+@Injectable()
 export class TaskRepository {
     async findAll(): Promise<any[]> {
         const data = await readFile('tasks.json', 'utf-8');
